@@ -225,6 +225,36 @@ console.log(starWarsCharacters);
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
 
+console.log("lunghezza prima della rimozione: " + charactersNames.length);
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (femaleCharacters.includes(charactersNames[i])) {
+    charactersNames.splice(i, 1);
+    i--;
+  }
+}
+console.log("lunghezza dopo modifiche: " + charactersNames.length);
+
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+const randomIndex = Math.floor(Math.random() * starWarsCharacters.length);
+let randomChar = starWarsCharacters[randomIndex];
+
+console.log(
+  randomChar.name +
+    " è un personaggio di Star Wars nato il " +
+    randomChar.birth_year +
+    " è " +
+    randomChar.gender +
+    " e pesa " +
+    randomChar.mass +
+    " kg per un altezza di " +
+    randomChar.height +
+    " cm." +
+    " la sua tonalità di pelle è " +
+    randomChar.skin_color +
+    " e ha gli occhi " +
+    randomChar.eye_color +
+    "...come ogni personaggio di Star Wars è molto ben caratterizzato garantendo un elevata fattura di film, videogiochi, fumetti e serie tv, facendo si che siano tutti estremamente godibili alla vista o alla lettura. con questo vi invito a recuperare tutta la filmografia di Star Wars, e magari in futuro ad approfodire tutte le sfaccettature che questo fantastico mondo mette a disposizione."
+);
